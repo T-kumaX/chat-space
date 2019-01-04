@@ -13,51 +13,12 @@
           testさん
     %a.main__top--edit{:href => "/groups/15/edit"} Edit
   .main__contents
-    .main__contents__content{"data-message-id" => "62"}
-      .main__contents__content--name
-        岡田斗司夫
-      .main__contents__content--date
-        2018年12月16日 14時30分
-      .main__contents__content--text
-        ゴンとキルアは本来ジンとパリストンのような関係になるべきであったはず！
-    .main__contents__content{"data-message-id" => "63"}
-      .main__contents__content--name
-        岡田斗司夫
-      .main__contents__content--date
-        2018年12月16日 14時32分
-      .main__contents__content--text
-        最初の方で、早くからゴンをキルアを仲良くさせすぎたせいで後戻りできなくなったんじゃないかな。
-    .main__contents__content{"data-message-id" => "64"}
-      .main__contents__content--name
-        岡田斗司夫
-      .main__contents__content--date
-        2018年12月23日 15時57分
-      .main__contents__content--text
-        こういうクラピカを久しく見ていない。
-      .main__contents__content--image
-        %img.main__contents__content--image{:alt => "%e3%82%af%e3%83%a9%e3%83%92%e3%82%9a%e3%82%ab", :src => "https://s3-ap-northeast-1.amazonaws.com/chatspace-shuntasuzuki/uploads/message/image/64/%E3%82%AF%E3%83%A9%E3%83%92%E3%82%9A%E3%82%AB.jpeg"}/
-    .main__contents__content{"data-message-id" => "65"}
-      .main__contents__content--name
-        岡田斗司夫
-      .main__contents__content--date
-        2018年12月29日 23時39分
-      .main__contents__content--text
-        あああああ
-    .main__contents__content{"data-message-id" => "66"}
-      .main__contents__content--name
-        岡田斗司夫
-      .main__contents__content--date
-        2018年12月29日 23時39分
-      .main__contents__content--text
-        test
-      .main__contents__content--image
-        %img.main__contents__content--image{:alt => "%e3%82%ad%e3%83%ab%e3%82%a2", :src => "https://s3-ap-northeast-1.amazonaws.com/chatspace-shuntasuzuki/uploads/message/image/66/%E3%82%AD%E3%83%AB%E3%82%A2.jpeg"}/
+    = render @messages
   .main__bottom
-    %form#new_message.main__bottom__form{"accept-charset" => "UTF-8", :action => "/groups/15/messages", :enctype => "multipart/form-data", :method => "post"}
-      %input{:name => "utf8", :type => "hidden", :value => "✓"}/
-      %input{:name => "authenticity_token", :type => "hidden", :value => "6zGtJou9TebnZxkIU2vradcLza6vM7WX9rsKrvGupjScwFhvYwITwPTu5JZjeSzCKMeDuWQ9UUxpbbEbqC9a8w=="}/
-      %input#message_content.main__bottom__form--text{:name => "message[content]", :placeholder => "type a message", :type => "text"}/
-      %label.main__bottom__form--label{:for => "message_image"}
-        %input#message_image.main__bottom__form--label--image{:name => "message[image]", :type => "file"}/
-        %i.fa.fa-image
-      %input#button.main__bottom__form--submit{"data-disable-with" => "Send", :name => "commit", :type => "submit", :value => "Send"}/
+    = form_for [@group, @message], class: 'main__bottom__form' do |f|
+      = f.text_field :content, class: 'main__bottom__form--text', placeholder: 'type a message'
+      .input#message_content
+        = f.label :image, class: 'main__bottom__form--label' do
+          = fa_icon 'picture-o', class: 'fa fa-image'
+          = f.file_field :image, class: 'main__bottom__form--label--image'
+        = f.submit 'Send', class: 'main__bottom__form--submit'
