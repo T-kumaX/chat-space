@@ -1,0 +1,181 @@
+html {
+    color: #000;
+    background: #FFF;
+}
+
+div {
+    display: block;
+}
+
+input {
+    -webkit-appearance: textfield;
+    background-color: white;
+    -webkit-rtl-ordering: logical;
+    cursor: text;
+    padding: 1px;
+}
+
+label {
+    cursor: default;
+}
+
+.menu {
+    float: left;
+    width: 300px;
+    height: 100vh;
+  .menu__top {
+      background-color: #253141;
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 100px;
+      color: #FFFFFF;
+      height: 100px;
+      padding: 0px 20px;
+  }
+}
+
+.menu__top--icon {
+    float: right;
+  .menu__top--icon--style {
+      text-decoration: none;
+      color: #FFFFFF;
+    .fa {
+        display: inline-block;
+        font: normal normal normal 14px/1 FontAwesome;
+        font-size: inherit;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+  }
+}
+a:-webkit-any-link {
+    cursor: pointer;
+}
+
+.menu__contents {
+    background-color: #2f3e51;
+    height: calc(100vh - 100px);
+    padding: 0px 20px;
+    overflow: scroll;
+  .menu__contents__content {
+      padding: 20px 0px;
+    #link-to-group {
+        text-decoration: none;
+      .menu__contents__content--groupname {
+          font-size: 15px;
+          color: #FFFFFF;
+          text-decoration: none;
+      }
+      .menu__contents__content--topcomment {
+          margin-top: 5px;
+          font-size: 11px;
+          color: #FFFFFF;
+          text-decoration: none;
+      }
+    }
+  }
+}
+
+.main {
+    float: left;
+    width: calc(100vw - 300px);
+    height: 100vh;
+  .main__top {
+      background-color: #FFFFFF;
+      height: 100px;
+      border-bottom: solid 1px #eeeeee;
+      padding: 0px 40px;
+    .main__top--title {
+        float: left;
+      .main__top--title--groupname {
+          margin-top: 35px;
+          color: #333333;
+          font-size: 20px;
+      }
+      .main__top--title--membername {
+          margin-top: 15px;
+          color: #999999;
+          font-size: 12px;
+      }
+    }
+    .main__top--edit {
+        display: block;
+        float: right;
+        border: solid 1px #38AEF0;
+        color: #38AEF0;
+        text-decoration: none;
+        margin-top: 28px;
+        line-height: 40px;
+        padding: 0px 20px;
+    }
+  }
+  .main__contents {
+      background-color: #fafafa;
+      height: calc(100vh - 190px - 1px - 46px);
+      padding: 46px 40px 0px;
+      overflow: scroll;
+    .main__contents__content {
+        margin-bottom: 40px;
+      .main__contents__content--name {
+          font-weight: bold;
+          font-size: 16px;
+          color: #434A54;
+          float: left;
+      }
+      .main__contents__content--date {
+          font-size: 12px;
+          line-height: 24px;
+          color: #999999;
+          float: left;
+          margin-left: 10px;
+      }
+      .main__contents__content--text {
+          padding-top: 34px;
+          font-size: 14px;
+      }
+      .main__contents__content--image {
+          width: 150px;
+          height: 150px;
+          object-fit: contain;
+      }
+    }
+  }
+  .main__bottom {
+      background-color: #dcdcdc;
+      height: 90px;
+      padding: 0px 40px;
+    .main__bottom__form--text {
+        float: left;
+        height: 50px;
+        width: calc(100% - 160px);
+        background-color: #FFFFFF;
+        margin: 20px 0px;
+        padding-left: 10px;
+        border: none;
+    }
+    .main__bottom__form--label {
+        background-color: #FFFFFF;
+        padding: 19px 5px 17px 0;
+      .main__bottom__form--label--image {
+          display: none;
+      }
+      .fa {
+          line-height: 50px;
+          font-size: 20px;
+      }
+    }
+    .main__bottom__form--submit {
+        background-color: #38AEF0;
+        height: 54px;
+        padding: 0px 30px;
+        margin: 20px 0px 20px 15px;
+        color: #FFFFFF;
+        border: none;
+    }
+  }
+}
+
+.fa-photo:before, .fa-image:before, .fa-picture-o:before {
+    content: "\f03e";
+}
