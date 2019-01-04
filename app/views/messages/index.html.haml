@@ -1,18 +1,5 @@
 .menu
-  .menu__top
-    岡田斗司夫
-    .menu__top--icon
-      %a.menu__top--icon--style{:href => "/groups/new"}
-        %i.fa.fa-edit
-      %a.menu__top--icon--style{:href => "/users/6/edit"}
-        %i.fa.fa-cog
-  .menu__contents
-    .menu__contents__content
-      %a#link-to-group{:href => "/groups/15/messages"}
-        .menu__contents__content--groupname
-          HUNTER×HUNTER部
-        .menu__contents__content--topcomment
-          test
+  = render 'side_bar'
 .main
   .main__top
     .main__top--title
