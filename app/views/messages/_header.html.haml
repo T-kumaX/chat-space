@@ -1,0 +1,10 @@
+.main__top
+  .main__top--title
+    .main__top--title--groupname
+      = @group.name
+    .main__top--title--membername
+      Member：
+      %span
+        - @group.users.each do |user|
+          = user.name
+  %a.main__top--edit{:href => "/groups/#{@group.id}/edit"} Edit

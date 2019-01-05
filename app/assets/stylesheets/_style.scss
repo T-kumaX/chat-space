@@ -179,3 +179,9 @@ a:-webkit-any-link {
 .fa-photo:before, .fa-image:before, .fa-picture-o:before {
     content: "\f03e";
 }
+
+.message__image-box {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+}
