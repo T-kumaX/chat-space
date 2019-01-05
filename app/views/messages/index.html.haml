@@ -1,21 +1,11 @@
 .menu
   = render 'side_bar'
 .main
-  .main__top
-    .main__top--title
-      .main__top--title--groupname
-        HUNTER×HUNTER部
-      .main__top--title--membername
-        Member：
-        %span
-          岡田斗司夫
-        %span
-          testさん
-    %a.main__top--edit{:href => "/groups/15/edit"} Edit
+  = render 'header'
   .main__contents
     = render @messages
   .main__bottom
-    = form_for [@group, @message], class: 'main__bottom__form' do |f|
+    = form_for [@group, @message], html: {id: 'new_message'}, class: 'main__bottom__form' do |f|
       = f.text_field :content, class: 'main__bottom__form--text', placeholder: 'type a message'
       .input#message_content
         = f.label :image, class: 'main__bottom__form--label' do
