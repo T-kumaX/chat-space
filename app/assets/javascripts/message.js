@@ -49,4 +49,25 @@ $(function(){
     $(".main__bottom__form--submit").removeAttr("disabled");
     });
   });
+
+  var interval = setInterval(function() {
+      var last_id = ($('.main__contents__content')[0]) ? $('.main__contents__content:last').data('message-id') : 0;
+      $.ajax({
+        type: 'GET',
+        url: location.href,
+        data: { last_id: last_id },
+        dataType: 'json'
+      })
+      .done(function(json) {
+        var insertHTML = '';
+        json.messages.forEach(function(message) {
+            insertHTML += buildHTML(message);
+        });
+        $('.main__contents').append(insertHTML);
+        insertHTML.disabled = false;
+      })
+      .fail(function(json) {
+        insertHTML.disabled = false;
+      });
+  } , 5000 );
 });
